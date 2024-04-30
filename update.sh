@@ -1,4 +1,4 @@
-#!/bin/sh
+#!/bin/bash
 
 projects=("cuda-battery" "lala-core" "lala-parsing" "lala-power" "lala-pc" "turbo" "lattice-land.github.io" ".github")
 
