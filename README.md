@@ -13,6 +13,7 @@ mkdir lattice-land
 cd lattice-land
 git clone https://github.com/NVIDIA/cccl.git
 git clone https://github.com/xcsp3team/XCSP3-CPP-Parser.git
+git clone git@github.com:yhirose/cpp-peglib.git
 git clone git@github.com:lattice-land/cuda-battery.git
 git clone git@github.com:lattice-land/lala-core.git
 git clone git@github.com:lattice-land/lattice-land.github.io.git
