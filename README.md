@@ -11,8 +11,9 @@ Hence, when you change something in `lala-core`, you don't need to commit and pu
 ```
 mkdir lattice-land
 cd lattice-land
-git clone https://github.com/NVIDIA/cccl.git
-git clone https://github.com/xcsp3team/XCSP3-CPP-Parser.git
+git clone git@github.com:NVIDIA/cccl.git
+git clone git@github.com:xcsp3team/XCSP3-CPP-Parser.git
+git clone git@github.com:ptal/cpp-peglib.git
 git clone git@github.com:lattice-land/cuda-battery.git
 git clone git@github.com:lattice-land/lala-core.git
 git clone git@github.com:lattice-land/lattice-land.github.io.git
@@ -20,7 +21,8 @@ git clone git@github.com:lattice-land/lala-pc.git
 git clone git@github.com:lattice-land/lala-power.git
 git clone git@github.com:lattice-land/lala-parsing.git
 git clone git@github.com:lattice-land/.github.git
-git clone git@github.com:ptal/turbo.git
+git clone --recursive git@github.com:lattice-land/bench.git
+git clone --recursive git@github.com:ptal/turbo.git
 ```
 
 All projects have the same set of presets, therefore they are configured and compiled in the same way.
