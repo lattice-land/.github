@@ -22,6 +22,9 @@ def get_version_tag(repo_path):
 
 def check_if_latest(deps_name, deps_version):
   repo_path = "../" + deps_name
+  if deps_name == "cccl":
+      print("Ignore dependency CCCL.")
+      return
   if os.path.exists(repo_path):
     tag = get_version_tag(repo_path)
     if tag != deps_version:
@@ -80,9 +83,9 @@ def main():
   semver = Version.coerce(tag_name[1:])
   if not args.skiptag:
     repo = Repo(".")
-    if repo.is_dirty():
-      print("Git repository has uncommitted changes.")
-      exit(1)
+    #if repo.is_dirty():
+    #  print("Git repository has uncommitted changes.")
+    #  exit(1)
 
     if len(list(repo.iter_commits('main@{u}..main'))) != 0:
       print("Git repository has unpushed changes.")

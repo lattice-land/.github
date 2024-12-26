@@ -11,7 +11,6 @@ Hence, when you change something in `lala-core`, you don't need to commit and pu
 ```
 mkdir lattice-land
 cd lattice-land
-git clone git@github.com:NVIDIA/cccl.git
 git clone git@github.com:xcsp3team/XCSP3-CPP-Parser.git
 git clone git@github.com:ptal/cpp-peglib.git
 git clone git@github.com:lattice-land/cuda-battery.git
@@ -59,3 +58,21 @@ python3 release.py --kind minor cuda-battery
 ```
 
 There are other options to this script, type `python3 release.py -h` to get them all.
+
+To publish a new version:
+
+1. Update all CMakeLists with the new version of the dependencies.
+2. Commit and push the changes.
+3. Run the following commands:
+```
+python3 release.py --kind patch cuda-battery &&
+python3 release.py --kind minor lala-core --skipcheckdeps --skiptests --skipdoc &&
+python3 release.py --kind minor lala-parsing --skipcheckdeps --skiptests --skipdoc &&
+python3 release.py --kind minor lala-core --skiptag &&
+python3 release.py --kind minor lala-parsing --skiptag &&
+python3 release.py --kind minor lala-pc &&
+python3 release.py --kind minor lala-power &&
+python3 release.py --kind minor turbo
+```
+4. If it fails, you might need to remove the tags by hand before restarting the failed and unexecuted commands.
+
